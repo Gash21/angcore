@@ -1,1 +1,190 @@
-<p>This is the about view.</p>
+<div class="row">
+    <div class="col s4" input-field>
+        <input id="message" type="text" ng-model="dummyInputs.message" ng-init="dummyInputs.message = 'I\'m a message'">
+        <label for="message">Message</label>
+    </div>
+    <div class="col s2" input-field>
+        <input id="toastDuration" type="text" ng-model="dummyInputs.duration" ng-init="dummyInputs.duration = 1000">
+        <label for="toastDuration">Toast duration</label>
+    </div>
+    <div class="input-field col s4">
+        <a class="waves-effect waves-light btn" message="{{dummyInputs.message}}" duration="{{dummyInputs.duration}}" toast='click'>Toast!</a>
+    </div>
+</div>
+
+<!-- Dropdown Trigger -->
+<a class='dropdown-button btn' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
+    This is a dropdown
+</a>
+
+<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="500" data-closeonclick="false">
+    Show side-nav
+</a>
+
+<!-- Dropdown Structure -->
+<ul id='demoDropdown' class='dropdown-content'>
+    <li><a href="javascript:void(0);">Link 1</a></li>
+    <li><a href="javascript:void(0);">Link 2</a></li>
+    <li><a href="javascript:void(0);">Link 3</a></li>
+    <li><a href="javascript:void(0);">Link 4</a></li>
+    <li><a href="javascript:void(0);">Link 5</a></li>
+</ul>
+
+
+<div class="col">
+    <a class='btn' href='#demoModal' modal>Show Modal</a>
+</div>
+<!-- Modal Structure -->
+<div id="demoModal" class="modal">
+    <div class="modal-content">
+        <h4>Modal header</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+   <md-input-container class="md-block" flex-gt-sm >
+	    <label>Country</label>
+	    <md-select name="countryDropdown1" ng-model="candidateData.PermanentAddress.Country" ng-required="true">
+	        <md-option ng-repeat="country in countrylist" value="{{country.country}}" ng-click="getCountryStates(country.id)" >
+	            {{country.country}}
+	        </md-option>
+	    </md-select>
+	   
+	</md-input-container>
+
+<div style="display:none;">
+	<md-input-container class="md-block" ng-show="!hasStates" >
+	    <label>State</label>
+	    <input required name="stateInput" ng-model="candidateData.PermanentAddress.State" ng-required="true"/>
+	    
+	</md-input-container>
+</div>
+
+	    <md-input-container class="md-block" flex-gt-sm ng-show="hasStates" >
+	        <label>State</label>
+	        <md-select name="stateDropdown1" ng-model="candidateData.PermanentAddress.State"ng-required="true" >
+	            <md-option ng-repeat="state in states" value="{{state.state}}">
+	                {{state.state}}
+	            </md-option>
+	        </md-select>
+	       
+	</md-input-container>
+<!-- <main>
+    <div class="container">
+        <div class="row">
+            <div class="section col s4">
+                <div input-field>
+                    <select ng-model="select.value" material-select watch>
+                        <option ng-repeat="value in select.choices">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section col s8">
+                <h5>You selected: <b>{{select.value}}</b></h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section col s4">
+                <div input-field>
+                    <select ng-model="awesomeThings.berak" material-select watch>
+                        <option ng-repeat="berak in awesomeThings">{{berak}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section col s8">
+                <h5>You selected: <b>{{awesomeThings.berak}}</b></h5>
+            </div>
+        </div>
+    </div>
+</main>
+ -->
+
+<md-button ng-click="showCustomToast()" class="md-raised" style="padding-left: 10px;padding-right: 10px;">
+      Show Custom Toast
+    </md-button>
+
+
+<md-content>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button>{{title1}}</md-button>
+      <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
+      <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+      <md-button class="md-warn">{{title4}}</md-button>
+      <div class="label">Flat</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised">Button</md-button>
+      <md-button class="md-raised md-primary">Primary</md-button>
+      <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+      <md-button class="md-raised md-warn">Warn</md-button>
+      <div class="label">Raised</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-fab" aria-label="Eat cake">
+            <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+        </md-button>
+
+        <md-button class="md-fab md-primary" aria-label="Use Android">
+          <md-icon md-svg-src="img/icons/android.svg"></md-icon>
+        </md-button>
+
+        <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+            <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
+        </md-button>
+
+        <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+            <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
+        </md-button>
+
+        <md-button class="md-fab md-mini" aria-label="Eat cake">
+            <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+        </md-button>
+
+        <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
+          <md-icon md-svg-src="img/icons/android.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+      <div class="label">FAB</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
+        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Primary Link</md-button>
+
+        <md-button>Default Button</md-button>
+      <div class="label">Link vs. Button</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+      <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+      <md-button class="md-accent">Accent</md-button>
+      <md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
+      <div class="label">Themed</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button md-accent" aria-label="Favorite">
+        <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+      </md-button>
+      <md-button href="http://google.com"
+                 title="Launch Google.com in new window"
+                 target="_blank"
+                 ng-disabled="true"
+                 aria-label="Google.com"
+                 class="md-icon-button launch" >
+        <md-icon md-svg-icon="img/icons/launch.svg"></md-icon>
+      </md-button>
+      <div class="label">Icon Button</div>
+    </section>
+  </md-content>

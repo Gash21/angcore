@@ -1,0 +1,33 @@
+<div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" ng-app="MyApp">
+
+   <md-input-container class="md-block" flex-gt-sm >
+                        <label>Country</label>
+                        <md-select name="countryDropdown1" ng-model="candidateData.PermanentAddress.Country" ng-required="true">
+                            <md-option ng-repeat="country in countrylist" value="{{country.country}}" ng-click="getCountryStates(country.id)" >
+                                {{country.country}}
+                            </md-option>
+                        </md-select>
+                       
+                    </md-input-container>
+
+                    <md-input-container class="md-block" ng-show="!hasStates">
+                        <label>State</label>
+                        <input required name="stateInput" ng-model="candidateData.PermanentAddress.State" ng-required="true"/>
+                        
+                    </md-input-container>
+
+                        <md-input-container class="md-block" flex-gt-sm ng-show="hasStates" >
+                            <label>State</label>
+                            <md-select name="stateDropdown1" ng-model="candidateData.PermanentAddress.State"ng-required="true" >
+                                <md-option ng-repeat="state in states" value="{{state.state}}">
+                                    {{state.state}}
+                                </md-option>
+                            </md-select>
+                           
+                        </md-input-container>
+</div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->

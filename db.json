@@ -1,0 +1,12 @@
+{
+  "posts": [
+    { "id": 1, "title": "HTML5 Boilerplate", "desc": "HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites." },
+    { "id": 2, "title": "Angulare", "desc": "AngularJS is a toolset for building the framework most suited to your application development." },
+    { "id": 3, "title": "Karma", "desc": "Spectacular Test Runner for JavaScript." }
+
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
